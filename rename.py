@@ -41,20 +41,20 @@ os.system('')
 def verifiesInputFolderExists():
       pastaInput = './INPUT'
       try:
-            print '[SISTEMA]Tentando criar pasta de INPUT...'
+            print '[SISTEMA]: Tentando criar pasta de INPUT...'
             os.mkdir(pastaInput, 0755)
             return True
       except:
-            print '[SISTEMA]Pasta INPUT ja existe.'
+            print '[SISTEMA]: Pasta INPUT ja existe.'
             return False
             
 def verifiesOutputFolderExists():
       pastaOutput = './OUTPUT'
       try:
-            print '[SISTEMA]Tentando criar pasta de OUTPUT...'
+            print '[SISTEMA]: Tentando criar pasta de OUTPUT...'
             os.mkdir(pastaOutput, 0755)
       except:
-            print '[SISTEMA]Pasta OUTPUT ja existe.\n'
+            print '[SISTEMA]: Pasta OUTPUT ja existe.\n'
             
 def collectsNewName(person_directory, person_file):
       file_location = './INPUT/' + person_directory + '/' + person_file[:-4]
