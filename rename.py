@@ -1,5 +1,36 @@
 # -*- coding: utf-8 -*-
 
+
+# === PASSOS ===
+#
+# 1 - Lista todas pastas "pessoa", na pasta INPUT
+# 2 - Clona essa pasta "pessoa" específica para a pasta OUTPUT
+# 3 - Abre um arquivo .xlsx da pasta "pessoa" da vez
+# 4 - Pega o conteúdo da célula C2 desse arquivo
+# 5 - Copia o arquivo .xlsx original para o clone em OUTPUT, mas agora com o novo nome
+
+
+# === ESTRUTURA DOS ARQUIVOS ===
+#
+# ROOT
+#     INPUT
+#           1A   <- (este é uma pasta "pessoa")
+#                 arquivo1.xlsx
+#                 arquivo2.xlsx
+#           1B
+#                 arquivo1.xlsx
+#                 arquivo2.xlsx
+#
+#     OUTPUT
+#           1A
+#                 arquivo1 new_name.xlsx
+#                 arquivo2 new_name.xlsx
+#           1B
+#                 arquivo1 new_name.xlsx
+#                 arquivo2 new_name.xlsx
+#     rename.py
+
+
 import xlrd
 import os
 import shutil
@@ -36,10 +67,11 @@ def collectsNewName(person_directory, person_file):
 
       return info 
 
-# I/O
+# Cria pastas INPUT e OUTPUT caso não existam ("inicialização de setup")
 didICreateTheInputFolderJustNow = verifiesInputFolderExists()
 verifiesOutputFolderExists()
-if didICreateTheInputFolderJustNow == False:
+
+if didICreateTheInputFolderJustNow == False: # verificação para saber se essa inicialização foi de setup ou não
       for person_directory in os.listdir('./INPUT'):
             try:
                   new_folder = './OUTPUT/' + person_directory
