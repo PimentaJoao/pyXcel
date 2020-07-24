@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+# AUTOR: João Pedro Pimenta Silva (linkedin.com/in/PimentaJoao/)
+# Feito em: 20/03/2020
 
 
 # === PASSOS ===
